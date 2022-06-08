@@ -1,37 +1,74 @@
-import { ListItemButton, ListItemIcon } from "@mui/material";
-import { MyList } from "../../Styles/Navbar/NavBar";
+import { Divider, ListItemButton, ListItemIcon } from "@mui/material";
+import {
+  MyList,
+  ActionIconsContainerDesktop,
+  ActionIconsContainerMobile,
+} from "../../Styles/Navbar/NavBar";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Colors } from "../../Styles/Theme/Theme";
+import { NavLink } from "react-router-dom";
 
-export default function Actions() {
+export default function Actions({ matches }) {
+  const Component = matches
+    ? ActionIconsContainerMobile
+    : ActionIconsContainerDesktop;
   return (
-    <MyList type="row">
-      <ListItemButton
-        sx={{
-          justifyContent: "center",
-        }}
-      >
-        <ListItemIcon
+    <Component>
+      <MyList type="row">
+        <NavLink to="/cart ">
+          <ListItemButton
+            sx={{
+              justifyContent: "center",
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                color: matches && Colors.secondary,
+              }}
+            >
+              <ShoppingCartIcon />
+            </ListItemIcon>
+          </ListItemButton>
+        </NavLink>
+
+        <Divider orientation="vertical" flexItem />
+        <ListItemButton
           sx={{
-            display: "flex",
             justifyContent: "center",
-            color: matches && Colors.secondary,
           }}
         >
-          <ShoppingCartIcon />
-        </ListItemIcon>
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <FavoriteIcon />
-        </ListItemIcon>
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemIcon>
-          <PersonIcon />
-        </ListItemIcon>
-      </ListItemButton>
-    </MyList>
+          <ListItemIcon
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              color: matches && Colors.secondary,
+            }}
+          >
+            <FavoriteIcon />
+          </ListItemIcon>
+        </ListItemButton>
+        <Divider orientation="vertical" flexItem />
+        <ListItemButton
+          sx={{
+            justifyContent: "center",
+          }}
+        >
+          <ListItemIcon
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              color: matches && Colors.secondary,
+            }}
+          >
+            <PersonIcon />
+          </ListItemIcon>
+        </ListItemButton>
+        <Divider orientation="vertical" flexItem />
+      </MyList>
+    </Component>
   );
 }

@@ -3,6 +3,12 @@ import { Button, Container } from "@mui/material";
 import { useEffect } from "react";
 import theme from "./Styles/Theme/Theme";
 import NavBar from "./Components/Navbar/NavBar";
+import Banner from "./Components/Banner/Banner";
+import Promotions from "./Components/Promotions/Promotions";
+import { BrowserRouter } from "react-router-dom";
+import MainRoutes from "./MainRoutes";
+import ProductContextProvider from "./Context/ProductContext";
+import CartContextProvider from "./Context/CartContext";
 
 function App() {
   useEffect(() => {
@@ -10,17 +16,16 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container
-        maxWidth="xl"
-        sx={{
-          background: "#fff",
-        }}
-      >
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
         <NavBar />
-        <Button variant="contained">Test</Button>
-      </Container>
-    </ThemeProvider>
+        <CartContextProvider>
+          <ProductContextProvider>
+            <MainRoutes />
+          </ProductContextProvider>
+        </CartContextProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 

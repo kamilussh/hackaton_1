@@ -6,5 +6,13 @@ import NavBarMobile from "./NavBarMobile";
 export default function NavBar() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
-  return <>{matches ? <NavBarMobile /> : <NavBarDesktop />}</>;
+  return (
+    <>
+      {matches ? (
+        <NavBarMobile matches={matches} />
+      ) : (
+        <NavBarDesktop matches={matches} />
+      )}
+    </>
+  );
 }
