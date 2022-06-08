@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Colors } from "../Theme/Theme";
 
 export const BannerContainer = styled(Box)(({ matches, theme }) => ({
@@ -51,5 +51,27 @@ export const BannerDescription = styled(Typography)(({ theme }) => ({
     lineHeight: 1.15,
     letterSpacing: 1.15,
     marginBottom: "1.5em",
+  },
+}));
+
+export const BannerShopButton = styled(Button, {
+  // Configure which props should be forwarded on DOM
+  shouldForwardProp: (prop) => prop !== "color",
+  name: "ShopButton",
+  slot: "Root",
+  // We are specifying here how the styleOverrides are being applied based on props
+  overridesResolver: (props, styles) => [
+    styles.root,
+    props.color === "primary" && styles.primary,
+    props.color === "secondary" && styles.secondary,
+  ],
+})(({ theme }) => ({
+  padding: "20px 0px",
+  color: Colors.white,
+  fontWeight: "bold",
+  fontSize: "16px",
+  [theme.breakpoints.down("sm")]: {
+    padding: "10px 0px",
+    fontSize: "14px",
   },
 }));

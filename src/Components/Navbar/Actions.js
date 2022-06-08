@@ -64,9 +64,45 @@ export default function Actions({ matches }) {
               color: matches && Colors.secondary,
             }}
           >
-            <PersonIcon />
+            <ShoppingCartIcon />
           </ListItemIcon>
         </ListItemButton>
+        <Divider orientation="vertical" flexItem />
+        <ListItemButton
+          sx={{
+            justifyContent: "center",
+          }}
+        >
+          <ListItemIcon
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              color: matches && Colors.secondary,
+            }}
+          >
+            <FavoriteIcon />
+          </ListItemIcon>
+        </ListItemButton>
+        <Divider orientation="vertical" flexItem />
+        {/* <NavLink to="/auth"> */}
+        <NavLink to="/auth">
+          <ListItemButton
+            sx={{
+              justifyContent: "center",
+            }}
+          >
+            <ListItemIcon
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                color: matches && Colors.secondary,
+              }}
+            >
+              <PersonIcon />
+            </ListItemIcon>
+          </ListItemButton>
+        </NavLink>
+        {/* </NavLink> */}
         <Divider orientation="vertical" flexItem />
       </MyList>
     </Component>

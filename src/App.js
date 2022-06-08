@@ -5,10 +5,15 @@ import theme from "./Styles/Theme/Theme";
 import NavBar from "./Components/Navbar/NavBar";
 import Banner from "./Components/Banner/Banner";
 import Promotions from "./Components/Promotions/Promotions";
-import { BrowserRouter } from "react-router-dom";
 import MainRoutes from "./MainRoutes";
 import ProductContextProvider from "./Context/ProductContext";
 import CartContextProvider from "./Context/CartContext";
+
+import Footer from "./Components/Footer/Footer";
+import AppDrawer from "./Components/Drawer/Drawer";
+import { UIProvider } from "./Context/UI/Context";
+import { BrowserRouter } from "react-router-dom";
+import AuthContextProvider from "./Context/Authorization/AuthContext";
 
 function App() {
   useEffect(() => {
@@ -17,14 +22,28 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <NavBar />
-        <CartContextProvider>
-          <ProductContextProvider>
-            <MainRoutes />
-          </ProductContextProvider>
-        </CartContextProvider>
-      </ThemeProvider>
+      <AuthContextProvider>
+        <ProductContextProvider>
+          <ThemeProvider theme={theme}>
+            <Container
+              maxWidth="xl"
+              sx={{
+                background: "#fff",
+              }}
+            >
+              <UIProvider>
+                <NavBar />
+                <CartContextProvider>
+                  <MainRoutes />
+                </CartContextProvider>
+
+                <Footer />
+                <AppDrawer />
+              </UIProvider>
+            </Container>
+          </ThemeProvider>
+        </ProductContextProvider>
+      </AuthContextProvider>
     </BrowserRouter>
   );
 }

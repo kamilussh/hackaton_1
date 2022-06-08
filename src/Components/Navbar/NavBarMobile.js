@@ -3,11 +3,13 @@ import { NavBarContainer, NavBarHeader } from "../../Styles/Navbar/NavBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Actions from "./Actions";
+import { useUIContext } from "../../Context/UI/Context";
 
 export default function NavBarMobile({ matches }) {
+  const { SetDrawerOpen } = useUIContext();
   return (
     <NavBarContainer>
-      <IconButton>
+      <IconButton onClick={() => SetDrawerOpen(true)}>
         <MenuIcon />
       </IconButton>
       <NavBarHeader textAlign={"center"} variant="h4">
