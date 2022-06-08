@@ -6,15 +6,23 @@ import {
 } from "../../Styles/Navbar/NavBar";
 import SearchIcon from "@mui/icons-material/Search";
 import Actions from "./Actions";
+import { NavLink } from "react-router-dom";
 
 export default function NavBarDesktop({ matches }) {
   return (
     <NavBarContainer>
       <NavBarHeader>Stunner.Stock</NavBarHeader>
       <MyList type="row">
-        <ListItemText primary="Home" />
-        <ListItemText primary="Categories" />
-        <ListItemText primary="Products" />
+        <NavLink to="/">
+          <ListItemText primary="Home" />
+        </NavLink>
+        <NavLink to="/products">
+          <ListItemText primary="Products" />
+        </NavLink>
+        <NavLink to="/add">
+          <ListItemText primary="Add product" />
+        </NavLink>
+
         <ListItemText primary="Contact us" />
         <ListItemButton>
           <ListItemIcon>
@@ -22,7 +30,7 @@ export default function NavBarDesktop({ matches }) {
           </ListItemIcon>
         </ListItemButton>
       </MyList>
-      <Actions />
+      <Actions matches={matches} />
     </NavBarContainer>
   );
 }
