@@ -16,11 +16,14 @@ export default function NavBarDesktop({ matches }) {
         <NavLink to="/">
           <ListItemText primary="Home" />
         </NavLink>
-        <ListItemText primary="Categories" />
-        <ListItemText primary="Products" />
-        <NavLink to="/contactus">
-          <ListItemText primary="Contact us" />
+        <NavLink to="/products">
+          <ListItemText primary="Products" />
         </NavLink>
+        <NavLink to="/add">
+          <ListItemText primary="Add product" />
+        </NavLink>
+
+        <ListItemText primary="Contact us" />
         <ListItemButton>
           <ListItemIcon>
             <SearchIcon />
