@@ -1,10 +1,9 @@
 import { ThemeProvider } from "@mui/system";
-import { Button, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { useEffect } from "react";
 import theme from "./Styles/Theme/Theme";
 import NavBar from "./Components/Navbar/NavBar";
-import Banner from "./Components/Banner/Banner";
-import Promotions from "./Components/Promotions/Promotions";
+
 import MainRoutes from "./MainRoutes";
 import ProductContextProvider from "./Context/ProductContext";
 import CartContextProvider from "./Context/CartContext";
@@ -16,6 +15,7 @@ import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./Context/Authorization/AuthContext";
 import PrimarySearchAppBar from "./Components/Navbar/NavBarDesktop";
 import NavBarDesktop from "./Components/Navbar/NavBarDesktop";
+import FavoriteContextProvider from "./Context/FavoriteContext";
 
 function App() {
   useEffect(() => {
@@ -25,27 +25,30 @@ function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <ProductContextProvider>
-          <ThemeProvider theme={theme}>
-            <NavBar />
-            <Container
-              maxWidth="xl"
-              sx={{
-                background: "#fff",
-              }}
-            >
-              <UIProvider>
-                {/* <NavBar /> */}
-                <CartContextProvider>
-                  <MainRoutes />
-                </CartContextProvider>
+        <FavoriteContextProvider>
+          <ProductContextProvider>
+            <ThemeProvider theme={theme}>
+              <Container
+                maxWidth="xl"
+                sx={{
+                  background: "#fff",
+                }}
+              >
+                <UIProvider>
+                  <NavBar />
+                  <CartContextProvider>
+                    <MainRoutes />
+                  </CartContextProvider>
 
-                <Footer />
-                <AppDrawer />
-              </UIProvider>
-            </Container>
-          </ThemeProvider>
-        </ProductContextProvider>
+                  <Footer />
+                  <AppDrawer />
+                </UIProvider>
+              </Container>
+            </ThemeProvider>
+          </ProductContextProvider>
+        </FavoriteContextProvider>
+
+        <ProductContextProvider />
       </AuthContextProvider>
     </BrowserRouter>
   );

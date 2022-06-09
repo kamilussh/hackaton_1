@@ -36,21 +36,23 @@ export default function Actions({ matches }) {
         </NavLink>
 
         <Divider orientation="vertical" flexItem />
-        <ListItemButton
-          sx={{
-            justifyContent: "center",
-          }}
-        >
-          <ListItemIcon
+        <NavLink to="/favorite">
+          <ListItemButton
             sx={{
-              display: "flex",
               justifyContent: "center",
-              color: matches && Colors.secondary,
             }}
           >
-            <FavoriteIcon />
-          </ListItemIcon>
-        </ListItemButton>
+            <ListItemIcon
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                color: matches && Colors.secondary,
+              }}
+            >
+              <FavoriteIcon />
+            </ListItemIcon>
+          </ListItemButton>
+        </NavLink>
         <Divider orientation="vertical" flexItem />
         {/* <NavLink to="/auth"> */}
         <NavLink to="/auth">

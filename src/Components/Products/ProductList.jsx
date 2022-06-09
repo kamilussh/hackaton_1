@@ -24,7 +24,7 @@ import {
 } from "@mui/material";
 import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+
 import { useContext, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { NavLink, useSearchParams } from "react-router-dom";
@@ -33,11 +33,14 @@ import { cartContext } from "../../Context/CartContext";
 import Filter from "../Filter/Filter";
 // import "./ProductsList.css";
 import "./ProductList.css";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { favoriteContext } from "../../Context/FavoriteContext";
 
 const ProductsList = () => {
   const { getProducts, products, deleteProduct } = useContext(productContext);
 
   const { addProductToCart } = useContext(cartContext);
+  const { addProductToFavorite } = useContext(favoriteContext);
 
   const [searchParams, setSearchParams] = useSearchParams();
   // Хук useSearchParams предназначен для чтения и изменения строки запроса в URL для текущего маршрута. По аналогии с хуком useState возвращает значение и функцию для изменения этого значения.
@@ -174,7 +177,7 @@ const ProductsList = () => {
                     </Button>
                   </NavLink>
 
-                  <Button>
+                  <Button onClick={(e) => addProductToFavorite(item)}>
                     <FavoriteBorderIcon />
                   </Button>
 

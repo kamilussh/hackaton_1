@@ -39,14 +39,6 @@
       "img1": "https://assets.adidas.com/images/w_600,f_auto,q_auto/4e894c2b76dd4c8e9013aafc016047af_9366/Superstar_Shoes_White_FV3284_01_standard.jpg",
       "name": "Adidas",
       "id": 6
-    },
-    {
-      "type": "Pants",
-      "description": "great deal",
-      "price": "1800",
-      "img1": "https://media.titus.de/media/image/08/25/ce/goodbois-jogginghosen-trademark-sweat-pants-grey-vorderansicht-0680251_600x600.jpg",
-      "name": "Sweat Pants",
-      "id": 7
     }
   ],
   "favourites": []
