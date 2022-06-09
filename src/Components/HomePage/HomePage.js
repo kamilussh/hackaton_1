@@ -4,10 +4,10 @@ import Promotions from "../Promotions/Promotions";
 
 const HomePage = () => {
   return (
-    <did>
+    <div>
       <Banner />
       <Promotions />
-    </did>
+    </div>
   );
 };
 

@@ -1,35 +1,14 @@
 {
   "products": [
     {
-      "title": "jmoijio",
-      "type": "jijiojioj",
-      "description": "iojiojioj",
-      "price": "777",
-      "img1": "bhjbjb",
-      "img2": "jnkjnjk",
-      "img3": "njknjk",
-      "id": 179
-    },
-    {
-      "type": "giygiy",
-      "description": "giygiygiy",
-      "price": "65856",
-      "img1": "uyfuyfg",
-      "id": 180
-    },
-    {
-      "type": "sadfw",
-      "description": "asdf",
-      "price": "0123e12",
-      "img1": "sadfsdf",
-      "id": 181
-    },
-    {
-      "type": "11111",
-      "description": "1111",
-      "price": "11101111",
-      "img1": "1",
-      "id": 182
+      "title": "iPhone 13 Pro",
+      "type": "Phongdfgdfgdfg",
+      "description": "Самая большая модернизация камер Pro",
+      "price": 1170,
+      "img1": "https://www.istore.kg/media/products/iphone-13-pro-blue-select.webp",
+      "img2": "https://www.istore.kg/media/products/iphone-13-pro-blue-select.webp",
+      "img3": "https://www.istore.kg/media/products/iphone-13-pro-blue-select.webp",
+      "id": 2
     }
   ]
 }
