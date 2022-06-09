@@ -42,6 +42,7 @@ const AddProduct = () => {
 
   const handleSave = (e) => {
     if (
+      inpValues.name.trim() === "" ||
       inpValues.type.trim() === "" ||
       inpValues.description.trim() === "" ||
       inpValues.price.toString().trim() === "" ||
@@ -61,7 +62,18 @@ const AddProduct = () => {
         <div>
           <TextField
             id="outlined-basic"
-            label="Тип"
+            label="Product Name"
+            variant="outlined"
+            value={inpValues.name}
+            name="name"
+            onChange={(e) => handleChange(e)}
+            className="inp2"
+          />
+        </div>
+        <div>
+          <TextField
+            id="outlined-basic"
+            label="Type"
             variant="outlined"
             value={inpValues.type}
             name="type"
@@ -72,7 +84,7 @@ const AddProduct = () => {
         <div>
           <TextField
             id="outlined-basic"
-            label="Описание"
+            label="Description"
             variant="outlined"
             value={inpValues.description}
             name="description"
@@ -84,7 +96,7 @@ const AddProduct = () => {
           <TextField
             id="outlined-basic"
             type="number"
-            label="Цена"
+            label="Price"
             variant="outlined"
             value={inpValues.price}
             name="price"
@@ -95,7 +107,7 @@ const AddProduct = () => {
         <div>
           <TextField
             id="outlined-basic"
-            label="Изображение 1"
+            label="Image"
             variant="outlined"
             value={inpValues.img1}
             name="img1"

@@ -8,6 +8,7 @@ import {
   BannerShopButton,
   BannerTitle,
 } from "../../Styles/Banner/Banner";
+import { NavLink } from "react-router-dom";
 
 export default function Banner() {
   const theme = useTheme();
@@ -15,7 +16,7 @@ export default function Banner() {
 
   return (
     <BannerContainer>
-      <BannerImage src="/images/Banner/girl.png" />
+      <BannerImage src="/images/Banner/kuromi.png" />
       <BannerContent>
         <Typography variant="h6">Huge Collection</Typography>
         <BannerTitle variant="h2">New arrival</BannerTitle>
@@ -23,7 +24,9 @@ export default function Banner() {
           Everything that you will need this summer. From swimsuits to
           costumes!From sandales to hats! Purchase right now!
         </BannerDescription>
-        <BannerShopButton color="primary">Shop now</BannerShopButton>
+        <NavLink to="/products" style={{ textDecoration: "none" }}>
+          <BannerShopButton color="secondary">Shop now</BannerShopButton>
+        </NavLink>
       </BannerContent>
     </BannerContainer>
   );

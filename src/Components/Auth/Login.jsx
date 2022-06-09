@@ -108,7 +108,7 @@ export default function Login() {
             />
 
             {hasAccount ? (
-              <NavLink to="/">
+              <NavLink to="/" style={{ textDecoration: "none" }}>
                 <Button
                   type="button"
                   fullWidth
@@ -120,7 +120,7 @@ export default function Login() {
                 </Button>
               </NavLink>
             ) : (
-              <NavLink to="/">
+              <NavLink to="/" style={{ textDecoration: "none" }}>
                 <Button
                   type="button"
                   fullWidth

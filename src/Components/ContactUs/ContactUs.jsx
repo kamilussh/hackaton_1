@@ -1,28 +1,45 @@
 import React from "react";
 import "./ContactUs.css";
-// import backgr from "/images/Background/backgr.png";
+import background from "../images/background.jpeg";
+import CallIcon from "@mui/icons-material/Call";
 
 const ContactUs = () => {
   return (
     <div className="container-header">
       <div className="header-text" id="header-go">
-        <h1>
-          Contact us at any time! <br />
-        </h1>
-        <p>
-          JavaScript это язык, который позволяет вам применять сложные вещи
-          <br />
-          на web странице — каждый раз, когда на web странице происходит что-то
-          <br />
-          большее, чем просто её статичное отображение — отображение <br />
-          периодически обновляемого контента, или интерактивных карт, <br />
-          или анимация 2D/3D графики — можете быть уверены, что скорее всего, не
-          <br />
-          обошлось без JavaScript.
-        </p>
+        <div>
+          <span>Talk to Sales</span>
+          <span>
+            Interested in HubSpot’s software? Just pick up the phone to chat
+            with a member of our sales team.
+          </span>
+          <span>
+            <a
+              href="tel:+996556165565"
+              className="sales-number"
+              data-sales-number="local"
+              data-invoca-number="996 556 165 565"
+              aria-hidden="false"
+              data-loaded="true"
+            >
+              <span className="sales-number-number">
+                <span className="sales-number-sales">+996 556 165 565</span>
+              </span>
+            </a>
+          </span>
+        </div>
       </div>
-      <div className="header-mac">
-        {/* <img id="mac" src={backgr} alt="BG" /> */}
+      <div>
+        <div>
+          <div>
+            {" "}
+            <CallIcon />{" "}
+          </div>
+          <div>
+            <h2>Talk to Sales</h2>
+          </div>
+          <div></div>
+        </div>
       </div>
     </div>
   );
