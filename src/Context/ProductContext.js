@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 import { useLocation } from "react-router-dom";
 
 export const productContext = createContext();
@@ -8,12 +8,17 @@ const API = "http://localhost:8000/products";
 
 const INIT_STATE = {
   products: [],
+  productDetails: {},
 };
 
 const reducer = (state = INIT_STATE, action) => {
   switch (action.type) {
     case "GET_PRODUCTS":
       return { ...state, products: action.payload };
+    case "GET_PRODUCTS_DETAILS":
+      return { ...state, productDetails: action.payload };
+    default:
+      return state;
   }
 };
 
@@ -21,7 +26,8 @@ const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const location = useLocation();
-  console.log(location.search);
+  // console.log(location.search);
+  //   Хук useLocation возвращает объект location, представляющий текущий URL. Его можно рассматривать как useState, который возвращает новое местоположение при каждом изменении URL. Этот хук можно использовать, например, чтобы вызвать событие просмотра новой страницы для инструмента веб-аналитики.
 
   const addProduct = async (newProduct) => {
     await axios.post(API, newProduct);
@@ -34,15 +40,23 @@ const ProductContextProvider = ({ children }) => {
       payload: data,
     });
   };
+
   const getProductsDetails = async (id) => {
     const { data } = await axios.get(`${API}/${id}`);
+    // console.log(data);
     dispatch({
       type: "GET_PRODUCTS_DETAILS",
       payload: data,
     });
+    console.log(data, "data from context get function");
   };
+
   const deleteProduct = async (id) => {
     await axios.delete(`${API}/${id}`);
+    getProducts();
+  };
+  const editProduct = async (id, prodObj) => {
+    await axios.patch(`${API}/${id}`, prodObj);
     getProducts();
   };
 
@@ -50,11 +64,12 @@ const ProductContextProvider = ({ children }) => {
     <productContext.Provider
       value={{
         products: state.products,
-
+        productDetails: state.productDetails,
         addProduct,
         getProducts,
         getProductsDetails,
         deleteProduct,
+        editProduct,
       }}
     >
       {children}

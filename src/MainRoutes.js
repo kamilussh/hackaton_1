@@ -4,11 +4,18 @@ import Login from "./Components/Auth/Login";
 import AddProduct from "./Components/Admin/AddProduct/AddProduct";
 import Cart from "./Components/Cart/Cart";
 import HomePage from "./Components/HomePage/HomePage";
+// import ProductDetails from "./Components/Products/ProductDetails";
 import ProductDetails from "./Components/Products/ProductDetails";
 
 // import NavBar from "./Components/Navbar/NavBar";
 import ProductsList from "./Components/Products/ProductList";
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom";
+import { Payment } from "@mui/icons-material";
+
+import EditProduct from "./Components/Admin/EditProduct/EditProduct";
+import Favorite from "./Components/Favorites/Favorite";
+
+// import Favorite from "./Components/Favorites/Favorite";
 
 const MainRoutes = () => {
   return (
@@ -19,8 +26,11 @@ const MainRoutes = () => {
       <Route path="/add" element={<AddProduct />} />
       <Route path="/" element={<HomePage />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/payment" element={<Payment />} />
+      <Route path="/favorite" element={<Favorite />} />
       <Route path="/details/:id" element={<ProductDetails />} />
       <Route path="/products" element={<ProductsList />} />
+      <Route path="/edit/:id" element={<EditProduct />} />
     </Routes>
   );
 };
