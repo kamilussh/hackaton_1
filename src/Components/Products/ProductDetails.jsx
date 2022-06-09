@@ -16,6 +16,7 @@ import Paper from "@mui/material/Paper";
 import "swiper/css";
 
 import SwiperCore, { Thumbs } from "swiper";
+import { cartContext } from "../../Context/CartContext";
 
 SwiperCore.use([Thumbs]);
 
@@ -24,6 +25,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   console.log(id, "id from Details");
   const { getProductsDetails, productDetails } = useContext(productContext);
+  const { addProductToCart } = useContext(cartContext);
 
   useEffect(() => {
     getProductsDetails(id);
@@ -126,13 +128,7 @@ const ProductDetails = () => {
               <Typography variant="body2" gutterBottom>
                 {productDetails.description}
               </Typography>
-              <Alert
-                icon={<TrendingDownIcon fontSize="inherit" />}
-                severity="success"
-                sx={{ fontWeight: 700, mt: "20px" }}
-              >
-                Скидка : 10 %
-              </Alert>
+
               <Box
                 component="div"
                 sx={{
@@ -144,18 +140,6 @@ const ProductDetails = () => {
                 }}
               >
                 <Typography
-                  variant="h5"
-                  component="div"
-                  sx={{
-                    fontWeight: 300,
-                    letterSpacing: 2,
-                    textDecoration: "line-through",
-                    marginRight: "20px",
-                  }}
-                >
-                  {productDetails.price} с.
-                </Typography>
-                <Typography
                   variant="h4"
                   component="div"
                   sx={{ fontWeight: 700, letterSpacing: 2 }}
@@ -164,6 +148,7 @@ const ProductDetails = () => {
                 </Typography>
               </Box>
               <Button
+                onClick={(e) => addProductToCart()}
                 variant="contained"
                 color="success"
                 startIcon={<AddShoppingCartIcon />}
@@ -180,7 +165,7 @@ const ProductDetails = () => {
                 variant="outlined"
                 sx={{ fontWeight: 700, mt: "20px" }}
               >
-                Телефон: +996777555111
+                Телефон: +996 553 165 360
               </Alert>
             </Grid>
           </Grid>

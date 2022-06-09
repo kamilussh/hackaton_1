@@ -178,7 +178,7 @@ const ProductsList = () => {
                     <FavoriteBorderIcon />
                   </Button>
 
-                  <Button onClick={(e) => addProductToCart(item)}>
+                  <Button>
                     <AddShoppingCartIcon />
                   </Button>
                 </CardActions>
