@@ -24,7 +24,7 @@ import {
 } from "@mui/material";
 import RestoreFromTrashIcon from "@mui/icons-material/RestoreFromTrash";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useContext, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { NavLink, useSearchParams } from "react-router-dom";
@@ -102,9 +102,9 @@ const ProductsList = () => {
                 key={item.id}
                 className="card"
                 sx={{
-                  borderRadius: "20px",
-                  width: "300px",
-                  height: "430px ",
+                  borderRadius: "15px",
+                  width: "340px",
+                  height: "475px ",
                   marginBottom: "50px",
                 }}
               >
@@ -122,7 +122,7 @@ const ProductsList = () => {
                 />
                 <CardContent sx={{ marginLeft: "20px" }}>
                   <Typography gutterBottom variant="h5" component="div">
-                    {item.title}
+                    {item.name}
                   </Typography>
 
                   <Typography
@@ -131,6 +131,9 @@ const ProductsList = () => {
                     height="25px"
                   >
                     {item.description}
+                  </Typography>
+                  <Typography gutterBottom variant="h8" component="div">
+                    {item.type}
                   </Typography>
 
                   <Typography
@@ -156,11 +159,11 @@ const ProductsList = () => {
           </Button> */}
                   <Button
                     sx={{
-                      marginRight: "20px",
+                      marginRight: "22px",
                     }}
                     onClick={() => deleteProduct(item.id)}
                     className="btn"
-                    size="small"
+                    fontSize="10px"
                     variant="outlined"
                   >
                     Delete <RestoreFromTrashIcon />
@@ -170,6 +173,10 @@ const ProductsList = () => {
                       Preview
                     </Button>
                   </NavLink>
+
+                  <Button>
+                    <FavoriteBorderIcon />
+                  </Button>
 
                   <Button onClick={(e) => addProductToCart(item)}>
                     <AddShoppingCartIcon />

@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   Grid,
+  IconButton,
   List,
   ListItemText,
   Stack,
@@ -13,6 +14,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import SendIcon from "@mui/icons-material/Send";
+import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -27,18 +29,41 @@ export default function Footer() {
       }}
     >
       <Grid container spacing={2} justifyContent="center">
-        <Grid item md={6} lg={4}>
+        <Grid item md={15} lg={4}>
           <FooterTitle variant="body1">About Us</FooterTitle>
           <Typography variant="caption2">
-            edjsjjkfhsd fsd f sdf sd f sd fdsfsdfdsf dfdsfsdf dfsdfsdf dsfsdfdsf
-            dfsdfsdf sdfdsfdsfds fdsfds fds f segr. dfbh tg hy. n vdssvsv
-            sdvdsvsvs fvdsvsdvsd vdsvsvsd vdsvdsf gsgvrsgs gfsdgvsgr rhgrd
-            hfdhfhfdhd grdsgsdgs esdgsdgsd
+            We are the first store in Kyrgyzstan <br />
+            with grunge and pop style clothing! <br />
+            Follow us on social media to see all updates.
+            <br />
           </Typography>
-          <Box sx={{ mt: 4, color: Colors.dove_gray }}>
-            <FacebookIcon sx={{ mr: 1 }} />
-            <TwitterIcon sx={{ mr: 1 }} />
-            <InstagramIcon />
+          <Box sx={{ mt: 10, color: Colors.dove_gray }}>
+            <IconButton>
+              <FacebookIcon
+                sx={{ mr: 1 }}
+                onClick={() =>
+                  window.open("https://www.facebook.com/", "_blank")
+                }
+              />
+            </IconButton>
+            <IconButton>
+              <TwitterIcon
+                sx={{ mr: 1 }}
+                onClick={() =>
+                  window.open("https://twitter.com/?lang=en", "_blank")
+                }
+              />
+            </IconButton>
+            <IconButton>
+              <InstagramIcon
+                onClick={() =>
+                  window.open(
+                    "https://www.instagram.com/stunner.stock/",
+                    "_blank"
+                  )
+                }
+              />
+            </IconButton>
           </Box>
         </Grid>
         <Grid item md={6} lg={2}>
@@ -69,21 +94,37 @@ export default function Footer() {
         <Grid item md={6} lg={2}>
           <FooterTitle variant="body1">my account</FooterTitle>
           <List>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                Login
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                My Cart
-              </Typography>
-            </ListItemText>
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                My Account
-              </Typography>
-            </ListItemText>
+            <NavLink
+              to="/auth"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <ListItemText>
+                <Typography lineHeight={2} variant="caption2">
+                  Login
+                </Typography>
+              </ListItemText>
+            </NavLink>
+            <NavLink
+              to="/cart"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <ListItemText>
+                <Typography lineHeight={2} variant="caption2">
+                  My Cart
+                </Typography>
+              </ListItemText>
+            </NavLink>
+            <NavLink
+              to="/auth"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <ListItemText>
+                <Typography lineHeight={2} variant="caption2">
+                  My Account
+                </Typography>
+              </ListItemText>
+            </NavLink>
+
             <ListItemText>
               <Typography lineHeight={2} variant="caption2">
                 Wishlist

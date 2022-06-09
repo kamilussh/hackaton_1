@@ -28,6 +28,7 @@ export const Colors = {
   ///////////////
   white: "#fff",
   black: "#000",
+  pink: "#FF69B4",
 };
 
 const theme = createTheme({

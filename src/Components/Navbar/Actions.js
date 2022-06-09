@@ -52,38 +52,6 @@ export default function Actions({ matches }) {
           </ListItemIcon>
         </ListItemButton>
         <Divider orientation="vertical" flexItem />
-        <ListItemButton
-          sx={{
-            justifyContent: "center",
-          }}
-        >
-          <ListItemIcon
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              color: matches && Colors.secondary,
-            }}
-          >
-            <ShoppingCartIcon />
-          </ListItemIcon>
-        </ListItemButton>
-        <Divider orientation="vertical" flexItem />
-        <ListItemButton
-          sx={{
-            justifyContent: "center",
-          }}
-        >
-          <ListItemIcon
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              color: matches && Colors.secondary,
-            }}
-          >
-            <FavoriteIcon />
-          </ListItemIcon>
-        </ListItemButton>
-        <Divider orientation="vertical" flexItem />
         {/* <NavLink to="/auth"> */}
         <NavLink to="/auth">
           <ListItemButton

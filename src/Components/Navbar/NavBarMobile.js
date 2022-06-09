@@ -1,9 +1,10 @@
-import { IconButton } from "@mui/material";
-import { NavBarContainer, NavBarHeader } from "../../Styles/Navbar/NavBar";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
-import Actions from "./Actions";
+import { IconButton } from "@mui/material";
 import { useUIContext } from "../../Context/UI/Context";
+
+import { NavBarContainer, NavBarHeader } from "../../Styles/Navbar/NavBar";
+import Actions from "./Actions";
 
 export default function NavBarMobile({ matches }) {
   const { SetDrawerOpen } = useUIContext();
