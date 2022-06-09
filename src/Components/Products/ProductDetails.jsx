@@ -10,7 +10,7 @@ import MemoryIcon from "@mui/icons-material/Memory";
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import TrendingDownIcon from "@mui/icons-material/TrendingDown";
+
 import Paper from "@mui/material/Paper";
 // import "./Products.css";
 import "swiper/css";

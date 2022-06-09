@@ -67,11 +67,11 @@ export const BannerShopButton = styled(Button, {
   ],
 })(({ theme }) => ({
   padding: "20px 0px",
-  color: Colors.white,
+  color: Colors.pink,
   fontWeight: "bold",
-  fontSize: "16px",
+  fontSize: "25px",
   [theme.breakpoints.down("sm")]: {
     padding: "10px 0px",
-    fontSize: "14px",
+    fontSize: "10px",
   },
 }));

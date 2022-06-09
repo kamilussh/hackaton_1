@@ -2,7 +2,7 @@ import { IconButton, List, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
 import { Colors, DrawerWidth } from "../Theme/Theme";
-import "@fontsource/montez";
+import "@fontsource/teko";
 
 export const NavBarContainer = styled(Box)(() => ({
   display: "flex",
@@ -16,8 +16,10 @@ export const NavBarHeader = styled(Typography)(() => ({
   padding: "4px",
   flexGrow: 1,
   fontSize: "4em",
-  fontFamily: '"Montez", "cursive"',
-  color: Colors.secondary,
+  fontFamily: '"Teko", "sans-serif"',
+  color: Colors.black,
+  marginLeft: "50px",
+  letterSpacing: "7px",
 }));
 
 export const MyList = styled(List)(({ type }) => ({
@@ -25,6 +27,8 @@ export const MyList = styled(List)(({ type }) => ({
   flexGrow: 3,
   justifyContent: "center",
   alignItems: "center",
+  justifyContent: "space-between",
+  marginRight: "50px",
 }));
 
 export const ActionIconsContainerMobile = styled(Box)(() => ({

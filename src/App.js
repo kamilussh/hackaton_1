@@ -13,6 +13,7 @@ import AppDrawer from "./Components/Drawer/Drawer";
 import { UIProvider } from "./Context/UI/Context";
 import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./Context/Authorization/AuthContext";
+
 import FavoriteContextProvider from "./Context/FavoriteContext";
 
 function App() {
