@@ -106,8 +106,8 @@ const ProductsList = () => {
                 className="card"
                 sx={{
                   borderRadius: "20px",
-                  width: "300px",
-                  height: "430px ",
+                  width: "350px",
+                  height: "450px ",
                   marginBottom: "50px",
                 }}
               >
