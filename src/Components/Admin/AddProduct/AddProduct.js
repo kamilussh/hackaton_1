@@ -107,7 +107,29 @@ const AddProduct = () => {
         <div>
           <TextField
             id="outlined-basic"
-            label="Image"
+            label="Image1"
+            variant="outlined"
+            value={inpValues.img1}
+            name="img1"
+            onChange={(e) => handleChange(e)}
+            className="inp5"
+          />
+        </div>
+        <div>
+          <TextField
+            id="outlined-basic"
+            label="Image2"
+            variant="outlined"
+            value={inpValues.img1}
+            name="img1"
+            onChange={(e) => handleChange(e)}
+            className="inp5"
+          />
+        </div>
+        <div>
+          <TextField
+            id="outlined-basic"
+            label="Image3"
             variant="outlined"
             value={inpValues.img1}
             name="img1"

@@ -6,7 +6,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import MemoryIcon from "@mui/icons-material/Memory";
+
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
@@ -23,7 +23,7 @@ SwiperCore.use([Thumbs]);
 const ProductDetails = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { id } = useParams();
-  console.log(id, "id from Details");
+
   const { getProductsDetails, productDetails } = useContext(productContext);
   const { addProductToCart } = useContext(cartContext);
 
@@ -46,7 +46,7 @@ const ProductDetails = () => {
                 <SwiperSlide>
                   <img
                     width={400}
-                    // src={productDetails.img1}
+                    src={productDetails.img1}
                     alt={productDetails.title}
                   />
                 </SwiperSlide>
@@ -60,7 +60,7 @@ const ProductDetails = () => {
                 <SwiperSlide>
                   <img
                     width={400}
-                    src={productDetails.img2}
+                    src={productDetails.img3}
                     alt={productDetails.title}
                   />
                 </SwiperSlide>
@@ -77,7 +77,7 @@ const ProductDetails = () => {
                   <Paper elevation={3}>
                     <img
                       width={80}
-                      // src={productDetails.img1}
+                      src={productDetails.img1}
                       alt={productDetails.title}
                     />
                   </Paper>
@@ -102,6 +102,7 @@ const ProductDetails = () => {
                 </SwiperSlide>
               </Swiper>
             </Grid>
+
             <Grid item xs={6} sx={{ mt: 5 }}>
               {/* <Typography
               variant="h6"
@@ -150,12 +151,12 @@ const ProductDetails = () => {
               <Button
                 onClick={(e) => addProductToCart()}
                 variant="contained"
-                color="success"
+                color="primary"
                 startIcon={<AddShoppingCartIcon />}
                 fullWidth={true}
                 sx={{ mt: "20px", height: "50px" }}
               >
-                Добавить в корзину
+                Add to cart
               </Button>
               <NavLink to={`/edit/${productDetails.id}`}>
                 <Button>Edit</Button>
@@ -163,9 +164,10 @@ const ProductDetails = () => {
               <Alert
                 severity="info"
                 variant="outlined"
+                color="primary"
                 sx={{ fontWeight: 700, mt: "20px" }}
               >
-                Телефон: +996 553 165 360
+                Phone number: +996 553 165 360
               </Alert>
             </Grid>
           </Grid>

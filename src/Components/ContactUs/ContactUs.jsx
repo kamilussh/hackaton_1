@@ -1,48 +1,36 @@
-import React from "react";
-import "./ContactUs.css";
-import background from "../images/background.jpeg";
-import CallIcon from "@mui/icons-material/Call";
+import { useTheme } from "@mui/material/styles";
+import { Typography, useMediaQuery } from "@mui/material";
+import {
+  ContactUsContainer,
+  ContactUsContent,
+  ContactUsDescription,
+  ContactUsImage,
+  ContactUsShopButton,
+  ContactUsTitle,
+} from "../../Styles/ContactUs/ContactUs";
+import { NavLink } from "react-router-dom";
 
-const ContactUs = () => {
+export default function ContactUs() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <div className="container-header">
-      <div className="header-text" id="header-go">
-        <div>
-          <span>Talk to Sales</span>
-          <span>
-            Interested in HubSpot’s software? Just pick up the phone to chat
-            with a member of our sales team.
-          </span>
-          <span>
-            <a
-              href="tel:+996556165565"
-              className="sales-number"
-              data-sales-number="local"
-              data-invoca-number="996 556 165 565"
-              aria-hidden="false"
-              data-loaded="true"
-            >
-              <span className="sales-number-number">
-                <span className="sales-number-sales">+996 556 165 565</span>
-              </span>
-            </a>
-          </span>
-        </div>
-      </div>
-      <div>
-        <div>
-          <div>
-            {" "}
-            <CallIcon />{" "}
-          </div>
-          <div>
-            <h2>Talk to Sales</h2>
-          </div>
-          <div></div>
-        </div>
-      </div>
-    </div>
+    <ContactUsContainer>
+      <ContactUsImage src="/images/ContactUs/phone.gif" />
+      <ContactUsContent>
+        <Typography variant="h6">Contact us !</Typography>
+        <ContactUsTitle variant="h2">Get in touch with us</ContactUsTitle>
+        <ContactUsDescription variant="subtitle">
+          Everything that you will need this summer. From swimsuits to
+          costumes!From sandales to hats! Purchase right now! <br /> +996 556
+          165 565
+        </ContactUsDescription>
+        <NavLink to="/products" style={{ textDecoration: "none" }}>
+          <ContactUsShopButton color="secondary">
+            Contact us
+          </ContactUsShopButton>
+        </NavLink>
+      </ContactUsContent>
+    </ContactUsContainer>
   );
-};
-
-export default ContactUs;
+}
