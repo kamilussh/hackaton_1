@@ -23,7 +23,6 @@ const FavoriteContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
   const addProductToFavorite = (productItem) => {
-    //добавление
     let favorite = JSON.parse(localStorage.getItem("favorite"));
     if (!favorite) {
       favorite = {

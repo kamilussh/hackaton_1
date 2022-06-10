@@ -105,9 +105,9 @@ const ProductsList = () => {
                 key={item.id}
                 className="card"
                 sx={{
-                  borderRadius: "15px",
-                  width: "340px",
-                  height: "475px ",
+                  borderRadius: "20px",
+                  width: "300px",
+                  height: "430px ",
                   marginBottom: "50px",
                 }}
               >
@@ -125,7 +125,7 @@ const ProductsList = () => {
                 />
                 <CardContent sx={{ marginLeft: "20px" }}>
                   <Typography gutterBottom variant="h5" component="div">
-                    {item.name}
+                    {item.title}
                   </Typography>
 
                   <Typography
@@ -167,11 +167,11 @@ const ProductsList = () => {
           </Button> */}
                   <Button
                     sx={{
-                      marginRight: "22px",
+                      marginRight: "20px",
                     }}
                     onClick={() => deleteProduct(item.id)}
                     className="btn"
-                    fontSize="10px"
+                    size="small"
                     variant="outlined"
                   >
                     Delete <RestoreFromTrashIcon />

@@ -13,8 +13,7 @@ import AppDrawer from "./Components/Drawer/Drawer";
 import { UIProvider } from "./Context/UI/Context";
 import { BrowserRouter } from "react-router-dom";
 import AuthContextProvider from "./Context/Authorization/AuthContext";
-import PrimarySearchAppBar from "./Components/Navbar/NavBarDesktop";
-import NavBarDesktop from "./Components/Navbar/NavBarDesktop";
+
 import FavoriteContextProvider from "./Context/FavoriteContext";
 
 function App() {

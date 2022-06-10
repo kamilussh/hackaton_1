@@ -6,24 +6,26 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import MemoryIcon from "@mui/icons-material/Memory";
+
 import Button from "@mui/material/Button";
 import Alert from "@mui/material/Alert";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import TrendingDownIcon from "@mui/icons-material/TrendingDown";
+
 import Paper from "@mui/material/Paper";
 // import "./Products.css";
 import "swiper/css";
 
 import SwiperCore, { Thumbs } from "swiper";
+import { cartContext } from "../../Context/CartContext";
 
 SwiperCore.use([Thumbs]);
 
 const ProductDetails = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { id } = useParams();
-  console.log(id, "id from Details");
+
   const { getProductsDetails, productDetails } = useContext(productContext);
+  const { addProductToCart } = useContext(cartContext);
 
   useEffect(() => {
     getProductsDetails(id);
@@ -58,7 +60,7 @@ const ProductDetails = () => {
                 <SwiperSlide>
                   <img
                     width={400}
-                    src={productDetails.img2}
+                    src={productDetails.img3}
                     alt={productDetails.title}
                   />
                 </SwiperSlide>
@@ -100,6 +102,7 @@ const ProductDetails = () => {
                 </SwiperSlide>
               </Swiper>
             </Grid>
+
             <Grid item xs={6} sx={{ mt: 5 }}>
               {/* <Typography
               variant="h6"
@@ -126,13 +129,7 @@ const ProductDetails = () => {
               <Typography variant="body2" gutterBottom>
                 {productDetails.description}
               </Typography>
-              <Alert
-                icon={<TrendingDownIcon fontSize="inherit" />}
-                severity="success"
-                sx={{ fontWeight: 700, mt: "20px" }}
-              >
-                Скидка : 10 %
-              </Alert>
+
               <Box
                 component="div"
                 sx={{
@@ -144,18 +141,6 @@ const ProductDetails = () => {
                 }}
               >
                 <Typography
-                  variant="h5"
-                  component="div"
-                  sx={{
-                    fontWeight: 300,
-                    letterSpacing: 2,
-                    textDecoration: "line-through",
-                    marginRight: "20px",
-                  }}
-                >
-                  {productDetails.price} с.
-                </Typography>
-                <Typography
                   variant="h4"
                   component="div"
                   sx={{ fontWeight: 700, letterSpacing: 2 }}
@@ -164,13 +149,14 @@ const ProductDetails = () => {
                 </Typography>
               </Box>
               <Button
+                onClick={(e) => addProductToCart()}
                 variant="contained"
-                color="success"
+                color="primary"
                 startIcon={<AddShoppingCartIcon />}
                 fullWidth={true}
                 sx={{ mt: "20px", height: "50px" }}
               >
-                Добавить в корзину
+                Add to cart
               </Button>
               <NavLink to={`/edit/${productDetails.id}`}>
                 <Button>Edit</Button>
@@ -178,9 +164,10 @@ const ProductDetails = () => {
               <Alert
                 severity="info"
                 variant="outlined"
+                color="primary"
                 sx={{ fontWeight: 700, mt: "20px" }}
               >
-                Телефон: +996777555111
+                Phone number: +996 553 165 360
               </Alert>
             </Grid>
           </Grid>

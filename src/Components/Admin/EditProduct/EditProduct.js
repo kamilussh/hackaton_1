@@ -2,7 +2,7 @@ import { Button, TextField } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { productContext } from "../../../Context/ProductContext";
-
+import "./EditProducts.css";
 const EditProduct = () => {
   const { productDetails, getProductsDetails, editProduct } =
     useContext(productContext);
@@ -35,7 +35,7 @@ const EditProduct = () => {
     <form onSubmit={(e) => handleSave(e)}>
       <TextField
         id="outlined-basic"
-        label="Название"
+        label="Name"
         variant="outlined"
         value={inpValues.title}
         name="title"
@@ -43,7 +43,7 @@ const EditProduct = () => {
       />
       <TextField
         id="outlined-basic"
-        label="Тип"
+        label="Type"
         variant="outlined"
         value={inpValues.type}
         name="type"
@@ -51,7 +51,7 @@ const EditProduct = () => {
       />
       <TextField
         id="outlined-basic"
-        label="Описание"
+        label="Discription"
         variant="outlined"
         value={inpValues.description}
         name="description"
@@ -59,7 +59,7 @@ const EditProduct = () => {
       />
       <TextField
         id="outlined-basic"
-        label="Цена"
+        label="Price"
         variant="outlined"
         value={inpValues.price}
         name="price"
@@ -67,7 +67,7 @@ const EditProduct = () => {
       />
       <TextField
         id="outlined-basic"
-        label="Изображение 1"
+        label="img1"
         variant="outlined"
         value={inpValues.img1}
         name="img1"
@@ -75,7 +75,7 @@ const EditProduct = () => {
       />
       <TextField
         id="outlined-basic"
-        label="Изображение 2"
+        label="img2"
         variant="outlined"
         value={inpValues.img2}
         name="img2"
@@ -83,7 +83,7 @@ const EditProduct = () => {
       />
       <TextField
         id="outlined-basic"
-        label="Изображение 3"
+        label="img3"
         variant="outlined"
         value={inpValues.img3}
         name="img3"
