@@ -5,3 +5,8 @@
 .cart img {
   width: 50px;
 }
+
+.button_cart {
+  color: blue;
+  background-color: blue;
+}

@@ -32,6 +32,18 @@ export const Colors = {
 };
 
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      mobile: 320,
+      laptop: 1024,
+    },
+  },
+
   palette: {
     primary: {
       main: Colors.primary,
@@ -51,7 +63,7 @@ const theme = createTheme({
       styleOverrides: {
         paper: {
           width: DrawerWidth,
-          background: Colors.primary,
+          background: "white",
           color: Colors.secondary,
           borderRadius: "0px 100px 0px 0px",
           borderRight: `1px solid ${Colors.primary}`,
@@ -61,7 +73,7 @@ const theme = createTheme({
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: lighten(0.2, Colors.primary),
+          borderColor: lighten(0.2, Colors.black),
         },
       },
     },

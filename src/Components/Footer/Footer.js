@@ -22,10 +22,15 @@ export default function Footer() {
       sx={{
         background: Colors.shaft,
         color: Colors.white,
-        p: { xs: 4, md: 10 },
-        pt: 12,
-        pb: 12,
+        p: { xs: 1, md: 10 },
+        pt: 5,
+        pb: 5,
         fontSize: { xs: "12px", md: "14px" },
+        // top: "160%",
+        // position: "fixed",
+        // bottom: "0",
+        marginTop: "auto",
+        width: "89%",
       }}
     >
       <Grid container spacing={2} justifyContent="center">
@@ -37,7 +42,7 @@ export default function Footer() {
             Follow us on social media to see all updates.
             <br />
           </Typography>
-          <Box sx={{ mt: 10, color: Colors.dove_gray }}>
+          <Box className="icons" sx={{ mt: 10, color: Colors.dove_gray }}>
             <IconButton>
               <FacebookIcon
                 sx={{ mr: 1 }}
@@ -124,12 +129,16 @@ export default function Footer() {
                 </Typography>
               </ListItemText>
             </NavLink>
-
-            <ListItemText>
-              <Typography lineHeight={2} variant="caption2">
-                Wishlist
-              </Typography>
-            </ListItemText>
+            <NavLink
+              to="/favorite"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <ListItemText>
+                <Typography lineHeight={2} variant="caption2">
+                  Wishlist
+                </Typography>
+              </ListItemText>
+            </NavLink>
           </List>
         </Grid>
         <Grid item md={6} lg={4}>

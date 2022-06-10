@@ -44,7 +44,7 @@ const ProductDetails = () => {
                 <SwiperSlide>
                   <img
                     width={400}
-                    // src={productDetails.img1}
+                    src={productDetails.img1}
                     alt={productDetails.title}
                   />
                 </SwiperSlide>
@@ -75,7 +75,7 @@ const ProductDetails = () => {
                   <Paper elevation={3}>
                     <img
                       width={80}
-                      // src={productDetails.img1}
+                      src={productDetails.img1}
                       alt={productDetails.title}
                     />
                   </Paper>

@@ -1,0 +1,20 @@
+.favorite_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+  min-height: 1000px;
+  padding-top: 50px;
+}
+
+.favorite {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .cards {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row !important;
+} */
