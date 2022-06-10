@@ -57,7 +57,7 @@ const Cart = () => {
           <h4>Общая сумма: {cart.totalPrice}</h4>
 
           <NavLink to="/payment">
-            <Button>Оформить заказ</Button>
+            <Button className="button_cart">Оформить заказ</Button>
           </NavLink>
         </div>
       ) : (
