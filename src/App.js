@@ -27,22 +27,15 @@ function App() {
         <FavoriteContextProvider>
           <ProductContextProvider>
             <ThemeProvider theme={theme}>
-              <Container
-                maxWidth="xl"
-                sx={{
-                  background: "#fff",
-                }}
-              >
-                <UIProvider>
-                  <NavBar />
-                  <CartContextProvider>
-                    <MainRoutes />
-                  </CartContextProvider>
+              <UIProvider>
+                <NavBar />
+                <CartContextProvider>
+                  <MainRoutes />
+                </CartContextProvider>
 
-                  <Footer />
-                  <AppDrawer />
-                </UIProvider>
-              </Container>
+                <Footer />
+                <AppDrawer />
+              </UIProvider>
             </ThemeProvider>
           </ProductContextProvider>
         </FavoriteContextProvider>

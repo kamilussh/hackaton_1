@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from "react";
 import { cartContext } from "../../Context/CartContext";
 import "./Cart.css";
 import { NavLink } from "react-router-dom";
+import { Button } from "@mui/material";
 // import { cartContext } from "../../context/CartContext";
 
 const Cart = () => {
@@ -57,7 +58,7 @@ const Cart = () => {
           <h4>Общая сумма: {cart.totalPrice}</h4>
 
           <NavLink to="/payment">
-            <button>Оформить заказ</button>
+            <Button className="button_cart">Оформить заказ</Button>
           </NavLink>
         </div>
       ) : (

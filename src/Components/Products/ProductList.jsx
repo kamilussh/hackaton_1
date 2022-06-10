@@ -131,16 +131,24 @@ const ProductsList = () => {
                   <Typography
                     variant="body2"
                     color="text.secondary"
-                    height="25px"
+                    height="15px"
                   >
                     {item.description}
+                  </Typography>
+                  <Typography
+                    gutterBottom
+                    variant="h9"
+                    component="div"
+                    mt="50px"
+                  >
+                    {item.type}
                   </Typography>
 
                   <Typography
                     sx={{
                       fontWeight: "bold",
-                      fontSize: "15px",
-                      marginTop: "20px",
+                      fontSize: "24px",
+                      marginTop: "5px",
                     }}
                     variant="body2"
                     color="text.secondary"
@@ -168,7 +176,10 @@ const ProductsList = () => {
                   >
                     Delete <RestoreFromTrashIcon />
                   </Button>
-                  <NavLink to={`/details/${item.id}`}>
+                  <NavLink
+                    to={`/details/${item.id}`}
+                    style={{ textDecoration: "none", color: "#FF69B4" }}
+                  >
                     <Button className="btn" size="small" variant="outlined">
                       Preview
                     </Button>
